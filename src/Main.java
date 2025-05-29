@@ -11,7 +11,8 @@ public class Main {
             System.out.println("2. Tính nghiệm của phương trình A + Bx = C");
             System.out.println("3. Tính số chính phương 1 số");
             System.out.println("4. Tính số nguyên tố của 1 số");
-            System.out.println("5. Thoát");
+            System.out.println("5. Tính S và P hcn");
+            System.out.println("6. Thoát");
             System.out.println("-------------------------");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -28,11 +29,14 @@ public class Main {
                 case 4:
                     soNguyenTo(scanner);
                     break;
+                case 5:
+                    chuViDienTichHCN(scanner);
+                    break;
                 default:
                     System.out.println("Nhập lại lựa chọn!");
                     break;
             }
-        } while (choice != 5);
+        } while (choice != 6);
     }
 
     public static void calculator(Scanner scanner){
@@ -121,6 +125,25 @@ public class Main {
             System.out.println(number + " là số nguyên tố");
         } else {
             System.out.println(number + " không phải số nguyên tố");
+        }
+    }
+
+    public static void chuViDienTichHCN(Scanner scanner){
+        System.out.print("Nhập chiều dài: ");
+        float chieuDai = scanner.nextFloat();
+        System.out.print("Nhập chiều rộng: ");
+        float chieuRong = scanner.nextFloat();
+
+        double S = chieuDai*chieuRong;
+        double P = (chieuDai+chieuRong)*2;
+
+        System.out.println("Chu vi = " + P);
+        System.out.println("Diện tích = " + S);
+
+        if (chieuDai < chieuRong){
+            System.out.println("Cạnh nhỏ nhất = " + chieuDai);
+        } else {
+            System.out.println("Cạnh nhỏ nhất = " + chieuRong);
         }
     }
 }
