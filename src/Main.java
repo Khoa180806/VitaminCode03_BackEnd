@@ -12,7 +12,8 @@ public class Main {
             System.out.println("3. Tính số chính phương 1 số");
             System.out.println("4. Tính số nguyên tố của 1 số");
             System.out.println("5. Tính S và P hcn");
-            System.out.println("6. Thoát");
+            System.out.println("6. Tính 2 số nguyên");
+            System.out.println("7. Thoát");
             System.out.println("-------------------------");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -32,11 +33,14 @@ public class Main {
                 case 5:
                     chuViDienTichHCN(scanner);
                     break;
+                case 6:
+                    calTwoIntegerNumber(scanner);
+                    break;
                 default:
                     System.out.println("Nhập lại lựa chọn!");
                     break;
             }
-        } while (choice != 6);
+        } while (choice != 7);
     }
 
     public static void calculator(Scanner scanner){
@@ -145,5 +149,17 @@ public class Main {
         } else {
             System.out.println("Cạnh nhỏ nhất = " + chieuRong);
         }
+    }
+
+    public static void calTwoIntegerNumber(Scanner scanner){
+        System.out.print("Nhập số nguyên a: ");
+        int a = scanner.nextInt();
+        System.out.print("Nhập số nguyên b: ");
+        int b = scanner.nextInt();
+
+        System.out.println("a + b = " + (a+b));
+        System.out.println("a - b = " + (a-b));
+        System.out.println("a * b = " + (a*b));
+        System.out.println("a / b = " + (float)(a+b));
     }
 }
