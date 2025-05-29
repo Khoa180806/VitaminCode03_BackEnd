@@ -14,7 +14,8 @@ public class Main {
             System.out.println("5. Tính S và P hcn");
             System.out.println("6. Tính 2 số nguyên");
             System.out.println("7. Tính lãi xuất");
-            System.out.println("8. Thoát");
+            System.out.println("8. Tìm số chẵn lẻ");
+            System.out.println("9. Thoát");
             System.out.println("-------------------------");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -40,11 +41,14 @@ public class Main {
                 case 7:
                     laiXuatNganHang(scanner);
                     break;
+                case 8:
+                    soChanLe(scanner);
+                    break;
                 default:
                     System.out.println("Nhập lại lựa chọn!");
                     break;
             }
-        } while (choice != 8);
+        } while (choice != 9);
     }
 
     public static void calculator(Scanner scanner){
@@ -98,7 +102,7 @@ public class Main {
             System.out.println("Nhập số cần kiểm tra: ");
             number = scanner.nextInt();
             if (number < 0) {
-                System.out.println("Số phải lớn hơn 0!");
+                System.out.println("Số phải     lớn hơn 0!");
             } else {
                 break;
             }
@@ -184,6 +188,16 @@ public class Main {
             if (choice.equalsIgnoreCase("N")){
                 break;
             }
+        }
+    }
+
+    public static void soChanLe(Scanner scanner){
+        System.out.print("Nhập số nguyên dương: ");
+        int number = scanner.nextInt();
+        if (number % 2 == 0){
+            System.out.println(number + " là số chẵn");
+        } else {
+            System.out.println(number + " là số lẻ");
         }
     }
 }
