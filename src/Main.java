@@ -13,7 +13,8 @@ public class Main {
             System.out.println("4. Tính số nguyên tố của 1 số");
             System.out.println("5. Tính S và P hcn");
             System.out.println("6. Tính 2 số nguyên");
-            System.out.println("7. Thoát");
+            System.out.println("7. Tính lãi xuất");
+            System.out.println("8. Thoát");
             System.out.println("-------------------------");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -36,11 +37,14 @@ public class Main {
                 case 6:
                     calTwoIntegerNumber(scanner);
                     break;
+                case 7:
+                    laiXuatNganHang(scanner);
+                    break;
                 default:
                     System.out.println("Nhập lại lựa chọn!");
                     break;
             }
-        } while (choice != 7);
+        } while (choice != 8);
     }
 
     public static void calculator(Scanner scanner){
@@ -161,5 +165,25 @@ public class Main {
         System.out.println("a - b = " + (a-b));
         System.out.println("a * b = " + (a*b));
         System.out.println("a / b = " + (float)(a+b));
+    }
+
+    public static void laiXuatNganHang(Scanner scanner){
+        while (true) {
+            System.out.print("Nhập số tiền gốc: ");
+            int tienGoc = scanner.nextInt();
+            System.out.print("Nhập lãi xuất mỗi năm (%): ");
+            int phanTram = scanner.nextInt();
+            System.out.print("Nhập thời gian (năm): ");
+            int thoiGian = scanner.nextInt();
+            scanner.nextLine();
+
+            int laiXuat = (tienGoc * phanTram * thoiGian)/100;
+            System.out.println("Lãi xuất của bạn là: " + laiXuat);
+            System.out.print("Bạn có muốn nhập lại không(Y/N)? :");
+            String choice = scanner.nextLine();
+            if (choice.equalsIgnoreCase("N")){
+                break;
+            }
+        }
     }
 }
